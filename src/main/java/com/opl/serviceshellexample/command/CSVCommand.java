@@ -29,7 +29,7 @@ public class CSVCommand {
             String header = "Id,Name,Email,Gender,Ip Address,PAN\n";
             writer.append(header);
 
-            List<Map<String, Object>> results = jdbcTemplate.queryForList("SELECT * FROM `otp-service`.`user`");
+            List<Map<String, Object>> results = jdbcTemplate.queryForList("SELECT * FROM `loan_application`.`application_master`");
             for (Map<String, Object> row : results) {
                 writer.append(String.valueOf(row.get("id"))).append(",").append(String.valueOf(row.get("name"))).append(",").append(String.valueOf(row.get("email"))).append(",").append(String.valueOf(row.get("gender"))).append(",").append(String.valueOf(row.get("ip_address"))).append(",").append(String.valueOf(row.get("pan"))).append("\n");
             }
